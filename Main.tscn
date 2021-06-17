@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Preset_Selections" type="OptionButton" parent="."]
+margin_left = 219.728
+margin_top = 346.671
+margin_right = 334.728
+margin_bottom = 366.671
+
+[node name="Dir_Selected" type="LineEdit" parent="."]
+margin_left = 37.0
+margin_top = 201.0
+margin_right = 472.0
+margin_bottom = 225.0
+placeholder_text = "Directory to project"
+
+[node name="Browse_Button" type="Button" parent="."]
+margin_left = 481.29
+margin_top = 202.847
+margin_right = 505.29
+margin_bottom = 222.847
+text = "..."
+
+[node name="file_dialog" type="FileDialog" parent="."]
+margin_left = 24.0
+margin_top = 54.0
+margin_right = 529.0
+margin_bottom = 379.0
+window_title = "Open a Directory"
+mode = 2
+access = 2
+current_dir = "/PCUSER/Documents/AppDev/Automatic File Setup"
+current_path = "/PCUSER/Documents/AppDev/Automatic File Setup/"
+
+[node name="button" type="Button" parent="."]
+margin_left = 387.771
+margin_top = 344.389
+margin_right = 440.771
+margin_bottom = 364.389
+text = "Create"
+
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
