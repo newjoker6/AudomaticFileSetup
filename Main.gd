@@ -8,7 +8,8 @@ onready var Presets = $Preset_Selections
 
 
 ##### Data Variables #####
-var preset_options = ["Select File Preset", "Bethesda", "Creepy Jar"]
+var preset_options = ["Select File Preset"]
+var preset_list = ["Unity", "Unreal", "WiiU", "Bethesda"]
 var selected_preset = ""
 
 
@@ -50,18 +51,31 @@ func _on_presets_selection(idx):
 
 
 func _on_button_pressed():
-	match selected_preset:
-		"Bethesda":
-			print("creating folders")
-			Bethesda._create_folders(Dir_Path.text)
-		
-		"Creepy Jar":
-			pass
+	if Dir_Path.text != "" and selected_preset in preset_options:
+		match selected_preset:
+			"Bethesda":
+				print("creating folders")
+				Bethesda._create_folders(Dir_Path.text)
+			
+			"Unity":
+				print("creating folders")
+				Unity._create_folders(Dir_Path.text)
+			
+			"Unreal":
+				print("creating folders")
+				Unreal._create_folders(Dir_Path.text)
+			
+			"WiiU":
+				print("creating folders")
+				WiiU._create_folders(Dir_Path.text)
 
 
 
 ##### Running Code #####
 func _add_presets():
+	preset_list.sort()
+	for option in preset_list:
+		preset_options.append(option)
 	for option in preset_options:
 		Presets.add_item(option)
 		Presets.add_separator()
