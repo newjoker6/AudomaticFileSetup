@@ -10,6 +10,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="color_rect" type="ColorRect" parent="."]
+margin_right = 601.0
+margin_bottom = 801.0
+color = Color( 0.364706, 0.47451, 0.545098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Preset_Selections" type="OptionButton" parent="."]
 margin_left = 219.728
 margin_top = 346.671
@@ -47,5 +55,31 @@ margin_top = 344.389
 margin_right = 440.771
 margin_bottom = 364.389
 text = "Create"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreatePresetButton" type="Button" parent="."]
+visible = false
+margin_left = 266.173
+margin_top = 451.172
+margin_right = 348.173
+margin_bottom = 471.172
+text = "Create Preset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReloadPresets" type="Button" parent="."]
+margin_left = 72.6783
+margin_top = 347.346
+margin_right = 175.678
+margin_bottom = 367.346
+text = "Check Custom"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CreatePresetButton" to="." method="_on_CreatePresetButton_pressed"]
+[connection signal="pressed" from="ReloadPresets" to="." method="_on_ReloadPresets_pressed"]
